@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
+
+/**FORM ELEMENTS**/
+
+form {
+	margin-right:200px;
+}
+.window {
+  display:inline-block;
+  border: 1px solid black;
+  border-radius:20px;
+  background-color:rgb(40,40,40);
+  padding: 20px 90px;
+  margin: 20px;
+  min-width: 20em;
+  font-family: 'Ubuntu Mono', monospace;
+  color: rgb(51,255,51);
+  line-height:1.5em;
+}
+.window .title {
+  text-transform:uppercase;
+  border-bottom: 1px solid white;
+  display: inline-block;
+  margin: 0px 0px 10px 0px;
+  padding: 0em 0.5em 0.15em 0.5em;
+}
+.window label{
+  display: block;
+  margin-bottom: 10px;
+}
+.window input {
+  background-color: rgb(60,60,60);
+  border: 1px solid white;
+  color: rgb(255,204,0);
+  padding-left:3px;
+}
+.window input[type=number], .window input[class=number] {
+  width:60px;
+}
+#button_group {
+	position: fixed;
+	top:0;
+	right:0;
+	margin-top:20px;
+	margin-right:25px;
+	border: 1px solid grey;
+	border-radius: 20px;
+	padding: 15px;
+	background-color:rgba(200,200,200,.75);
+}
+#button_group button {
+	display:block;
+	margin: 30px auto;
+	border-radius: 10px;
+	background-color: white;
+	font-size: 1em;
+	padding: 3px 5px;
+}
+
+/**LIGHTBOX ELEMENTS**/
+.lightbox {
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	height:100%;
+	background:rgba(0,0,0,0.75);
+}
+.lightbox_table {
+	width: 100%;
+	height: 100%;
+}
+.lightbox_table_cell {
+	vertical-align: middle;
+}
+.lightbox_content_wrapper {
+	background-color: white;
+	max-width: 75vw;
+	height: 80vh;
+	border-radius:30px;
+	padding: 40px;
+	margin: 0 60px;
+}
+img#lb_close {
+	position: fixed;
+	width:3em;
+	height:3em;
+	top:2.5vh;
+	right:4.25vw;
+	cursor: pointer;
+}
+#lightbox_content {
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	font-size: 18px;
+	text-align:left;
+}
+div.close_link {
+	text-align: center;
+	text-decoration: underline;
+	text-transform: upper-roman;
+}
+.close_link span {
+	cursor: pointer;
+}

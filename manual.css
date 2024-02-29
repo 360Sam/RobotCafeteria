@@ -1,0 +1,52 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
+table {
+  margin-top: 35px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+caption {
+  margin: 0px 0px 5px 0px;
+  font-weight: bold;
+  font-size: 1.3em;
+  text-decoration: underline;
+}
+
+caption span {
+  display: inline-block;
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+table, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+tr:first-child {
+  font-weight:bold;
+  text-align: center;
+}
+td:nth-child(1), td:nth-child(2) {
+	text-align:center;
+}
+td {
+  padding: 5px 10px;
+}
+
+.code {
+  font-family: 'Ubuntu Mono', monospace;
+  white-space: nowrap;
+  line-height: 1.6rem;
+}
+.result::before {
+  content: "= ";
+}
+.result {
+  display: inline-block;
+  padding: 0px 5px;
+  color: blue;
+}
+.small {
+  font-size: 0.8rem;
+  font-family: serif;
+}

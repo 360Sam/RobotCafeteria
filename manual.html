@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML' async></script>
+	<link href="manual.css" rel="stylesheet">
+	<title>Programming Manual</title>
+  </head>
+  <body>
+  <h1>Robot Manual</h1>
+  <p>The following is a summary of the robot's programming language. The robot understands most algebra and arithmetic, including the use of letters to stand in for 
+  numbers. But the letter must first be given a meaning before it can be used.</p>
+  <table>
+  <caption>Standard Operations<br><span>For the examples, let \(A=10\)</span></caption>
+  <tr>
+    <td>Operation</td>
+    <td>Symbol</td>
+    <td>Examples</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Addition</td>
+    <td class="code">+</td>
+    <td class="code">4+3<span class="result">7</span><br>
+    A+3<span class="result">13</span></td>
+    <td>Addition is written with the plus sign.</td>
+  </tr>
+  <tr>
+    <td>Subtraction</td>
+    <td class="code">-</td>
+    <td class="code">4-3<span class="result">1</span><br>
+    4-A <span class="result">-6</span></td>
+    <td>Subtraction is written with the minus sign.</td>
+  </tr>
+  <tr>
+    <td>Multiplication</td>
+    <td class="code">*</td>
+    <td class="code">4*3<span class="result">12</span><br>
+    4*A<span class="result">40</span></td>
+    <td>Multiplication is written with the asterix (or 'star') sign. The robot does not understand multiplication any other way. It will not work to write \(4\times3\), \(4(3)\) or \(4A\).</td>
+  </tr>
+  <tr>
+    <td>Division</td>
+    <td class="code">/</td>
+    <td class="code">4/3<span class="result">1.333...</span><br>
+    A/4<span class="result">2.5</span></td>
+    <td>Division is done with the forward slash. It will not work to use a backslash, <span class="code">\</span>.</td>
+  </tr>
+  <tr>
+    <td>Grouping (Association)</td>
+    <td class="code">( ... )</td>
+    <td class="code">(4-3)/A<span class="result">0.1</span><br>
+    4-(3/A)<span class="result">3.7</span></td>
+    <td>Grouping is done with parentheses. The robot does not understand other grouping symbols like <span class="code">[ ...  ]</span>.</td>
+  </tr>
+  </table>
+  <table>
+    <caption>Special Functions<br><span>For the examples, let \(A=10\), \(B=-4\), \(C=1.5\)</span></caption>
+    <tr>
+      <td>Function</td>
+      <td>Mathematical Notation</td>
+      <td>Robot Language Symbol</td>
+      <td>Examples</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>Absolute Value</td>
+      <td>\(\lvert n \rvert\)</td>
+      <td class="code">absolute(n)</td>
+      <td class="code">absolute(-4)<span class="result">4</span><br>
+      absolute(C)<span class="result">1.5</span></td>
+      <td>The absolute value function makes negative numbers positive, and leaves positive numbers unchanged.</td>
+    </tr>
+    <tr>
+      <td>Maximum</td>
+      <td class="code">\(max(x,y,z, ...)\)</td>
+      <td class="code">max(x,y,z, ...)</td>
+      <td class="code">max(1,2)<span class="result">2</span><br>
+      max(A,C,-3,0)<span class="result">10</span></td>
+      <td>The maximum function chooses the greatest number from a list. Numbers in the list must be separated by commas. The list can have any length as long as there is at least one thing.</td>
+    </tr>
+    <tr>
+      <td>Minimum</td>
+       <td class="code">\(min(x,y,z, ...)\)</td>
+      <td class="code">min(x,y,z, ...)</td>
+      <td class="code">min(1,2)<span class="result">1</span><br>
+      max(A,C,-3,0)<span class="result">-3</span></td>
+      <td>The minimum function chooses the least number from a list. Numbers in the list must be separated by commas. The list can have any length as long as there is at least one thing.</td>
+    </tr>
+    <tr>
+      <td>Exponents (powers)</td>
+      <td>\(x^n\)</td>
+      <td class="code">power(x,n)</td>
+      <td class="code">power(3,2)<span class="result">9</span><br>
+      power(B,2)<span class="result">16</span></td>
+      <td>The exponent function multiplies a number by itself a certain number of times.</td>
+    </tr>
+    <tr>
+      <td>Square Root</td>
+      <td>\(\sqrt{x}\)</td>
+      <td class="code">root(x)</td>
+      <td class="code">root(4)<span class="result">2</span><br>
+      root(100)<span class="result">10</span></td>
+      <td>The square root function \(\sqrt{x}\) is the inverse of the second power function \(x^2\).</td>
+    </tr>
+    <tr>
+      <td>Round</td>
+      <td>\([x]\)</td>
+      <td class="code">round(x)</td>
+      <td class="code">round(1.4)<span class="result">1</span><br>
+      round(3.592389)<span class="result">4</span><br>
+      round(-2.6)<span class="result">-3</span></td>
+      <td>The round function rounds any number to the nearest integer using the usual rules.</td>
+    </tr>
+    <tr>
+      <td>Round Down</td>
+      <td>\(\lfloor x\rfloor\)</td>
+      <td class="code">rounddown(x)</td>
+      <td class="code">rounddown(1.4)<span class="result">1</span><br>
+      rounddown(3.592389)<span class="result">3</span><br>
+      rounddown(-2.1)<span class="result">-3</span></td>
+      <td>The round down function rounds every number that is not an integer to the next lowest integer. If round down is used on an integer, it returns the integer unchanged.</td>
+    </tr>
+    <tr>
+      <td>Round Up</td>
+      <td>\(\lceil x\rceil\)</td>
+      <td class="code">roundup(x)</td>
+      <td class="code">roundup(1.4)<span class="result">2</span><br>
+      roundup(3.592389)<span class="result">4</span><br>
+      roundup(-2.6)<span class="result">-2</span></td>
+      <td>The round up function rounds every number that is not an integer to the next greatest integer. If round up is used on an integer, it returns the integer unchanged.</td>
+    </tr>
+  </table>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" type="text/javascript"></script>
+		<![endif]-->
+		<script src="robot_cafeteria.js" async></script>
+		<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+		<link href="robot_cafeteria.css" rel="stylesheet">
+		<title>Robot Cafeteria</title>
+	</head>
+	<body>
+		<form autocomplete="off">
+			<div id="input" class="window">
+				<div class="title">
+				  Inputs
+				</div>
+				<label>How many students want pizza today?<br>
+				S = <input id="S" name="S" type="number" value="129" required></label>
+				<label>The current cost of 1 pizza is:<br>
+				C = <input id="C" name="C" type="number" value="10.35" required></label>
+				<label>How many students does 1 pizza feed?<br>
+				L = <input id="L" name="L" type="number" value="8" required></label>
+			</div>
+			<div id="output" class="window">
+		<div class="title">
+		  Outputs
+		</div>
+		<label>The school will require:<br>
+		P = <input id="P" class="number" disabled> pizzas.</label>
+		<label>The total cost will be exactly:<br>
+		D = <input id="D" class="number" disabled> dollars.</label>
+		<label>There will be:<br>
+		R = <input id="R" class="number" disabled> pizzas left over.</label>
+	  </div>
+	  <div class="window" id="formulas">
+		<div class="title">
+		  Formulas
+		</div>
+		<label>P = <input id="P_formula" name="P_text" type="textarea" required></label>
+		<label>D = <input id="D_formula" name="D_text" type="textarea" required></label>
+		<label>R = <input id="R_formula" name="R_text" type="textarea" required></label>
+	  </div>
+	  <div id="button_group">
+			<button id="story">Scenario &amp; Instructions</button>
+			<button id="manual" class="button">Read the Manual</button>
+			<button id="calc" type="submit">Calculate</button>
+		</div>
+	</form>
+	<div id="lightbox" class="lightbox" style="display:none;" >
+		
+		<table class="lightbox_table">
+			<tr>
+				<td class="lightbox_table_cell" align="center">
+					<div class="lightbox_content_wrapper">
+						<img id="lb_close" src="close.png" onclick="document.getElementById('lightbox').style.display='none';">
+						<div id="lightbox_content">
+							<h1>Robot Cafeteria!</h1>
+							<p>The future is now! Your school has purchased a new robot to run the cafeteria. 
+							Robots don't need paychecks, never take sick days, and the school will save a fortune on hairnets. 
+							But the robot needs to be programmed, and the Assistant Principal has forgotten everything he learned about math! 
+							He's asked you to help program the robot for Pizza Day. When you're done, he'd like a brief report explaining your 
+							results and how well they work.</p>
+							<ul>You will need to:
+								<li>look at the situation carefully to understand the problem</li>
+								<li>figure out how to program the robot with formulas</li>
+								<li>test the formulas to make sure they work</li>
+								<li>write a short report explaining your result.</li>
+							</ul>
+							<h3>Understand the Situation</h3>
+							<p>Every Pizza Day, the Assistant Principal will type information into the robot. Look at the "Inputs" box to see what 
+							information the robot is given (and the variables it uses to store that information). The Assistant Principal has already put 
+							today's numbers there. But you can change them to test your formulas 
+							and make sure they give good answers no matter what the inputs are.</p>
+							<p>The robot is designed to give some information back to the user. See what information it returns in the "Outputs" box (and the 
+							variables it uses when calculating the answers). The 
+							robot is supposed to use formulas to calculate the numbers it returns by using the information it is given. But the robot 
+							doesn't have those formulas in its program. Fortunately, the robot also comes with a manual to help writing new formulas.</p>
+							<p>The Assistant Principal doesn't know how the formulas should work. But he has given you three important directions:</p>
+							<ul><li>Make sure the robot orders enough pizza for all the students.</li>
+							<li>Make sure the robot doesn't try to order fractions of a pizza. It can only order whole numbers of pizzas.</li>
+							<li>Try not to order more pizza than necessary.</li>
+							</ul>
+							<h3>Directions</h3>
+							<p>Learn how the robot works and try to write formulas to solve the problem as best as possible. When you're done programming 
+							the robot, write (on paper) an explanation of what you did for the Assistant Principal to study later. Make sure to include what formulas you 
+							wrote and what answers they give for the current inputs. Then explain your mathematical thinking about how your formulas work and how well 
+							they meet the Assistant Principal's requirements.</p>
+							<div class="close_link"><span onclick="document.getElementById('lightbox').style.display='none';">Close</span></div>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</body>
+</html>
